@@ -36,7 +36,7 @@ def animate_propeller(frame):
 draw_propeller()
 
 # first_fig - polar axis / plot
-# animate_propeller - function name to be called (multiple times)
+# animate_propeller - function that will be called %FRAMES times
 # np.range(....) - args of the function (animate_propeller)
 FuncAnimation(first_fig, animate_propeller, np.arange(-FRAMES / 2 , FRAMES / 2, 1)).save(
     "propeller_animation.gif", writer=PillowWriter(fps=FPS))
