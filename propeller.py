@@ -3,12 +3,13 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation, PillowWriter
 from PIL import Image
 
+# DPI - how many pixels are in 1 inch
 DPI = 48 # Dots Per Pixel (own screen)
 SIZE = 256 / DPI
 BLADES = 5
 RPM = 10
-FPS = 30
-FRAMES = 64
+FPS = 30 
+FRAMES = 64 # M ---  -M/2, M/2
 
 
 # polar plot, figsize means the PLT window size, plot is a 2D array of values
@@ -21,16 +22,24 @@ plt.grid(color='grey', linestyle='--', linewidth=0.5)
 x = np.linspace(0, 2*np.pi, 1000)
 
 def draw_propeller():
+    # calculation of r
     r = np.sin(BLADES * x + (np.pi / RPM))
+
+    # setting the points on plot
     plot.set_data(x, r)
     plt.savefig("propeller")
 
-def animate_propeler(frame):
+def animate_propeller(frame):
     r = np.sin(BLADES * x + (frame * np.pi / RPM))
     plot.set_data(x, r)
 
 draw_propeller()
 
-FuncAnimation(first_fig, animate_propeler, np.arange(-FRAMES / 2 , FRAMES / 2, 1)).save(
+# first_fig - polar axis / plot
+# animate_propeller - function name to be called (multiple times)
+# np.range(....) - args of the function (animate_propeller)
+FuncAnimation(first_fig, animate_propeller, np.arange(-FRAMES / 2 , FRAMES / 2, 1)).save(
     "propeller_animation.gif", writer=PillowWriter(fps=FPS))
+
+# shows the result - an image or animation
 plt.show()
