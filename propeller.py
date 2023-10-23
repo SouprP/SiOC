@@ -5,11 +5,13 @@ from PIL import Image
 
 # DPI - how many pixels are in 1 inch
 DPI = 48 # Dots Per Pixel (own screen)
-SIZE = 256 / DPI
-BLADES = 5
+SIZE = 256 / DPI# SIZE = 256 / DPI
+BLADES = 200
 RPM = 10
 FPS = 30 
 FRAMES = 64 # M ---  -M/2, M/2
+JUMP = 16
+temp = 0
 
 
 # polar plot, figsize means the PLT window size, plot is a 2D array of values
@@ -33,11 +35,26 @@ def animate_propeller(frame):
     r = np.sin(BLADES * x + (frame * np.pi / RPM))
     plot.set_data(x, r)
 
-draw_propeller()
+# Shutter Effect
+shutter_effect = Image.new('RGB', (512, 512))
+def shutter_effect(frame):
+    r = np.sin(BLADES * x + (frame * np.pi / RPM))
+    plot.set_data(x, r)
+
+    global temp
+    plt.savefig('frame.png')
+    shutter_effect.paste(Image.open('frame.png').crop((0, 
+        temp * JUMP, 512, temp * JUMP + JUMP)), (0, temp * JUMP))
+    temp += 1
+
+#draw_propeller()
+#shutter_effect()
 
 # first_fig - polar axis / plot
 # animate_propeller - function that will be called %FRAMES times
 # np.range(....) - args of the function (animate_propeller)
+# FRAMES - M = <-64, 64>
+# FPS - number of frames per second showed in the .gif file
 FuncAnimation(first_fig, animate_propeller, np.arange(-FRAMES / 2 , FRAMES / 2, 1)).save(
     "propeller_animation.gif", writer=PillowWriter(fps=FPS))
 
