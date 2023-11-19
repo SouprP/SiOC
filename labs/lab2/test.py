@@ -1,8 +1,8 @@
-from main import resize_nearest, resize_bilinear, resize_bicubic, rotate
+from main import resize_nearest, resize_bilinear, resize_bicubic, rotation_all_cv
 import cv2
 import numpy as np
 import threading
-from t import rotate_nearest_neighbor, rotate_bilinear, rotate_bicubic
+from t import rotate_nearest_neighbor, rotate_bicubic, rotate_bilinear
 
 
 # Orginalny obraz
@@ -50,9 +50,9 @@ def resize_test_3x():
 def rotate_test():
     RES_IMG = IMG
     #for i in range(1, int(360/12) + 1):
-    for i in range(1, 4 + 1):
+    for i in range(1, 30 + 1):
         print(i)
-        RES_IMG = rotate(RES_IMG, 12*i)
+        RES_IMG = rotate_nearest_neighbor(RES_IMG, 12*i)
 
     cv2.imwrite("labs/lab2/tests/rotate_nn.jpg", RES_IMG)
     print(error_calculator(IMG, RES_IMG))

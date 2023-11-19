@@ -165,8 +165,22 @@ def rotation(angle, flags=cv2.INTER_NEAREST):
         src=rotatedImage, M=rotationMatrix2, dsize=(height, width), flags=flags)
     plt.imsave('backToNormal_rotated.png', backToNormal)
 
+@timer
+def rotation_all_cv(img, angle, flags=cv2.INTER_LINEAR):
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-image : np.ndarray = cv2.imread("labs/lab2/tests/Pasikonik.jpg")
+    height, width = img.shape[:2]
+    center = (int(height / 2), int(width / 2))
+
+    rotationMatrix = cv2.getRotationMatrix2D(center=center, 
+        angle=angle, scale=0.5)
+        
+    rotatedIMG = cv2.warpAffine(src=img, M=rotationMatrix,
+        dsize=(height, width), flags=flags)
+
+    return rotatedIMG
+
+#image : np.ndarray = cv2.imread("labs/lab2/tests/Pasikonik.jpg")
 #resized = resize_bicubic(image, 3000, 1750)
 #cv2.imwrite("labs/lab2/pasikonik_resized.jpg", resized)
 

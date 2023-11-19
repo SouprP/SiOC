@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.1.14)  19 NOV 2023 02:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.1.14)  19 NOV 2023 05:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -350,55 +350,52 @@ Package pdftex.def Info: images/logo-pwr-pion.png  used on input line 39.
 Missing character: There is no ª in font cmtt10!
 [1
 
-{C:/Users/PC/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./images/logo-pwr-pion.png>]
-<images/5x_BACK_TO_ORG_nn.jpg, id=36, 519.9425pt x 779.91376pt>
-File: images/5x_BACK_TO_ORG_nn.jpg Graphic file (type jpg)
-<use images/5x_BACK_TO_ORG_nn.jpg>
-Package pdftex.def Info: images/5x_BACK_TO_ORG_nn.jpg  used on input line 62.
-(pdftex.def)             Requested size: 155.98395pt x 233.97594pt.
-<images/3x_BACK_TO_ORG_nn.jpg, id=37, 519.9425pt x 779.91376pt>
-File: images/3x_BACK_TO_ORG_nn.jpg Graphic file (type jpg)
-<use images/3x_BACK_TO_ORG_nn.jpg>
-Package pdftex.def Info: images/3x_BACK_TO_ORG_nn.jpg  used on input line 67.
-(pdftex.def)             Requested size: 155.98395pt x 233.97594pt.
- [2 <./images/5x_BACK_TO_ORG_nn.jpg>]
-<images/5x_BACK_TO_ORG_bl.jpg, id=47, 519.9425pt x 779.91376pt>
-File: images/5x_BACK_TO_ORG_bl.jpg Graphic file (type jpg)
-<use images/5x_BACK_TO_ORG_bl.jpg>
-Package pdftex.def Info: images/5x_BACK_TO_ORG_bl.jpg  used on input line 71.
-(pdftex.def)             Requested size: 155.98395pt x 233.97594pt.
-<images/3x_BACK_TO_ORG_bl.jpg, id=48, 519.9425pt x 779.91376pt>
-File: images/3x_BACK_TO_ORG_bl.jpg Graphic file (type jpg)
-<use images/3x_BACK_TO_ORG_bl.jpg>
-Package pdftex.def Info: images/3x_BACK_TO_ORG_bl.jpg  used on input line 76.
-(pdftex.def)             Requested size: 155.98395pt x 233.97594pt.
- [3 <./images/3x_BACK_TO_ORG_nn.jpg> <./images/5x_BACK_TO_ORG_bl.jpg>]
-<images/5x_BACK_TO_ORG_bc.jpg, id=53, 519.9425pt x 779.91376pt>
+{C:/Users/PC/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./images/logo-pwr-pion.png>] [2]
+<images/monke_512.jpg, id=43, 519.9425pt x 779.91376pt>
+File: images/monke_512.jpg Graphic file (type jpg)
+<use images/monke_512.jpg>
+Package pdftex.def Info: images/monke_512.jpg  used on input line 68.
+(pdftex.def)             Requested size: 103.98665pt x 155.97998pt.
+<images/5x_10_bc.jpg, id=44, 833.1125pt x 1252.68pt>
+File: images/5x_10_bc.jpg Graphic file (type jpg)
+<use images/5x_10_bc.jpg>
+Package pdftex.def Info: images/5x_10_bc.jpg  used on input line 74.
+(pdftex.def)             Requested size: 124.96147pt x 187.89389pt.
+<images/5x_BACK_TO_ORG_bc.jpg, id=45, 519.9425pt x 779.91376pt>
 File: images/5x_BACK_TO_ORG_bc.jpg Graphic file (type jpg)
 <use images/5x_BACK_TO_ORG_bc.jpg>
-Package pdftex.def Info: images/5x_BACK_TO_ORG_bc.jpg  used on input line 80.
-(pdftex.def)             Requested size: 155.98395pt x 233.97594pt.
-<images/3x_BACK_TO_ORG_bc.jpg, id=54, 519.9425pt x 779.91376pt>
-File: images/3x_BACK_TO_ORG_bc.jpg Graphic file (type jpg)
-<use images/3x_BACK_TO_ORG_bc.jpg>
-Package pdftex.def Info: images/3x_BACK_TO_ORG_bc.jpg  used on input line 85.
-(pdftex.def)             Requested size: 155.98395pt x 233.97594pt.
- [4 <./images/3x_BACK_TO_ORG_bl.jpg> <./images/5x_BACK_TO_ORG_bc.jpg>] [5 <./images/3x_BACK_TO_ORG_bc.jpg>] [6] (main.aux)
+Package pdftex.def Info: images/5x_BACK_TO_ORG_bc.jpg  used on input line 83.
+(pdftex.def)             Requested size: 103.98665pt x 155.97998pt.
+File: images/monke_512.jpg Graphic file (type jpg)
+<use images/monke_512.jpg>
+Package pdftex.def Info: images/monke_512.jpg  used on input line 134.
+(pdftex.def)             Requested size: 103.98665pt x 155.97998pt.
+ [3 <./images/monke_512.jpg> <./images/5x_10_bc.jpg> <./images/5x_BACK_TO_ORG_bc.jpg>]
+<images/rotate_bl_60.jpg, id=52, 935.495pt x 840.13875pt>
+File: images/rotate_bl_60.jpg Graphic file (type jpg)
+<use images/rotate_bl_60.jpg>
+Package pdftex.def Info: images/rotate_bl_60.jpg  used on input line 141.
+(pdftex.def)             Requested size: 140.31819pt x 126.01537pt.
+File: images/5x_BACK_TO_ORG_bc.jpg Graphic file (type jpg)
+<use images/5x_BACK_TO_ORG_bc.jpg>
+Package pdftex.def Info: images/5x_BACK_TO_ORG_bc.jpg  used on input line 148.
+(pdftex.def)             Requested size: 103.98665pt x 155.97998pt.
+ [4 <./images/rotate_bl_60.jpg>] [5] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 44EC22B3465F051B7BEEC7CF85B51736;688.
+(rerunfilecheck)             Checksum: 3A1EF6094D3C112E6B6A889540F54437;784.
  ) 
 Here is how much of TeX's memory you used:
- 10595 strings out of 475385
- 171933 string characters out of 2778323
- 521607 words of memory out of 3000000
- 31810 multiletter control sequences out of 15000+600000
+ 10580 strings out of 475385
+ 171333 string characters out of 2778323
+ 522607 words of memory out of 3000000
+ 31798 multiletter control sequences out of 15000+600000
  483391 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,6n,77p,266b,554s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\PC\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\PC\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\PC\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1440.pk> <C:\Users\PC\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\PC\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk> <C:\Users\PC\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\PC\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (6 pages, 955069 bytes).
+ 72i,7n,77p,266b,555s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ <C:\Users\PC\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\PC\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\PC\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1440.pk> <C:\Users\PC\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\PC\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk> <C:\Users\PC\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\PC\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on main.pdf (5 pages, 884412 bytes).
 PDF statistics:
- 299 PDF objects out of 1000 (max. 8388607)
- 13 named destinations out of 1000 (max. 500000)
- 84 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 278 PDF objects out of 1000 (max. 8388607)
+ 12 named destinations out of 1000 (max. 500000)
+ 74 words of extra memory for PDF output out of 10000 (max. 10000000)
 
