@@ -1,5 +1,6 @@
 import numpy as np
 import cv2
+import matplotlib.pyplot as plt
 from func_timer import timer
 
 
@@ -55,7 +56,12 @@ def denoise(image: np.ndarray, size: int, f: str = "") -> np.ndarray:
     return convolution2d(image, KERNELS[f](size)) if f else median(image, size)
 
 DIR = "labs/lab5/"
+POISON_1X = DIR + "Poisson_keys.jpg"
+POISON_4X =  DIR +"Poisson_keys_4x.jpg"
+POISON_16X = DIR + "Poisson_keys_16x.jpg"
+
 IMAGE = DIR + "cactus.jpg"
+#IMAGE = DIR + "Poisson_keys_16x.jpg"
 LAMBDA = 4
 
 def calculate_mse_and_mae(original: np.ndarray, restored: np.ndarray) -> tuple[np.float64, np.float64]:
@@ -193,29 +199,84 @@ def keys(image: np.ndarray, size: int) -> np.ndarray:
 
     return interpolated
 
-k = 2
+#########################
+# WSPÓŁCZYNNIK K i P
+k = 1
+P = 8
+#########################
+
 K = 2**k * 3
 print("K: ", K)
-CACTUS = cv2.imread(IMAGE)
-cactus_box = denoise(CACTUS, K, "box")
+
+# WSPÓŁCZYNNIK P
+# P = 7 => 128
+# P = 8 => 256
+#CACTUS = cv2.imread(IMAGE)
+ORG = cv2.imread(IMAGE)
+ORG = cv2.cvtColor(ORG, cv2.COLOR_BGR2RGB)
+CACTUS = cv2.imread(POISON_16X)
+CACTUS = cv2.cvtColor(CACTUS, cv2.COLOR_BGR2RGB)
+
+#cactus_box = denoise(CACTUS, K, "box")
 cactus_gauss = denoise(CACTUS, K, "gaussian")
 
-cactus_box_nearest = cactus_box
+#cactus_box_nearest = cactus_box
 cactus_gauss_nearest = cactus_gauss
+cactus_gauss_bilinear = cactus_gauss
+cactus_gauss_keys = cactus_gauss
 
 ################################
-cactus_box_nearest = nearest(cactus_box_nearest, 2**7)
-cactus_box_nearest = nearest(cactus_box_nearest, 1024)
-ERROR = calculate_mse_and_mae(CACTUS, cactus_box_nearest)
-print("BOX nearest, Kwadratowy: ", ERROR[0], ", Absolutny: ", ERROR[1])
+#cactus_box_nearest = nearest(cactus_box_nearest, 2**8)
+#cactus_box_nearest = nearest(cactus_box_nearest, 1024)
+#ERROR = calculate_mse_and_mae(CACTUS, cactus_box_nearest)
+#print("BOX nearest, Kwadratowy: ", ERROR[0], ", Absolutny: ", ERROR[1])
 
 
 ################################
-cactus_gauss_nearest = nearest(cactus_gauss_nearest, 2**7)
-cactus_gauss_nearest = nearest(cactus_gauss_nearest, 1024)
-ERROR = calculate_mse_and_mae(CACTUS, cactus_gauss_nearest)
-print("Gauss nearest, Kwadratowy: ", ERROR[0], ", Absolutny: ", ERROR[1])
 
+#cactus_gauss_nearest_small = nearest(cactus_gauss_nearest, 2**P)
+#cactus_gauss_nearest_normal = nearest(cactus_gauss_nearest_small, 1024)
+#ERROR = calculate_mse_and_mae(CACTUS, cactus_gauss_nearest_normal)
+#print("Gauss nearest, Kwadratowy: ", ERROR[0], ", Absolutny: ", ERROR[1])
+#FINAL_IMAGE = cactus_gauss_nearest_normal
 
-cv2.imwrite(DIR + "cactus_gauss_nearest.jpg", cactus_gauss_nearest)
-cv2.imwrite(DIR + "cactus_box_nearest.jpg", cactus_box_nearest)
+#cactus_gauss_bilinear_small = bilinear(cactus_gauss_bilinear, 2**P)
+#cactus_gauss_bilinear_normal = bilinear(cactus_gauss_bilinear_small, 1024)
+#ERROR = calculate_mse_and_mae(CACTUS, cactus_gauss_bilinear_normal)
+#print("Gauss biinear, Kwadratowy: ", ERROR[0], ", Absolutny: ", ERROR[1])
+#FINAL_IMAGE = cactus_gauss_bilinear_normal
+
+cactus_gauss_keys_small = keys(cactus_gauss_keys, 2**P)
+cactus_gauss_keys_normal = keys(cactus_gauss_keys_small, 1024)
+ERROR = calculate_mse_and_mae(CACTUS, cactus_gauss_keys_normal)
+print("Gauss Keys'a, Kwadratowy: ", ERROR[0], ", Absolutny: ", ERROR[1])
+FINAL_IMAGE = cactus_gauss_keys_normal
+
+fig, axs = plt.subplots(1, 3)
+axs[0].imshow(CACTUS)
+axs[0].set_title('ORYGINALNY')
+axs[0].set_xticks([])
+axs[0].set_yticks([])
+
+axs[1].imshow(cactus_gauss)
+axs[1].set_title('FILTR')
+axs[1].set_xticks([])
+axs[1].set_yticks([])
+
+axs[2].imshow(CACTUS - FINAL_IMAGE)
+axs[2].set_title('RÓŻNICA')
+axs[2].set_xticks([])
+axs[2].set_yticks([])
+
+#axs[3].imshow(cactus_gauss - cactus_gauss_nearest_normal)
+#axs[3].set_title('POWIĘKSZONY')
+#axs[3].set_xticks([])
+#axs[3].set_yticks([])
+plt.subplots_adjust(0.025, 0, 0.975, 1, hspace=0.01, wspace=0.05)
+
+#plt.savefig(DIR + 'nn_k' + str(k) + '_p' + str(P))
+#plt.savefig(DIR + 'lin_k' + str(k) + '_p' + str(P))
+#plt.savefig(DIR + 'keys_k' + str(k) + '_p' + str(P))
+plt.savefig(DIR + 'keys_poisson16x_k' + str(k) + '_p' + str(P))
+
+plt.show()
